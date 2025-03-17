@@ -25,7 +25,7 @@ const generateAccessToken = (user) =>
 
 const generateRefreshToken = (user) =>
   jwt.sign({ id: user._id, email: user.email }, "refresh", {
-    expiresIn: "10m",
+    expiresIn: "7d",
   });
 
 app.post("/auth/api/register", async (req, res) => {
